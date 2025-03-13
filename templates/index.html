@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="{{ url_for('static', filename='flag.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="column">
+		  <h2>Currency Converter</h2>
+		</div>
+	</div>
+	
+	<form method="POST">
+		<div class="row">
+			<div class="column">
+				<p>Amount</p>
+                <input type="text" name="amount" value="1">
+			</div>
+        </div>
+		<div class="row">
+			<div class="column" style="width: 10px;">
+				<div class="from">
+                        <p>From</p>
+                        <div class="select-input">
+                            <img src="https://flagcdn.com/48x36/us.png" id="from-flag">
+                            <select name="from_currency" id="from-currency">
+                                {% for code, country in currency_list.items() %}
+                                    <option value="{{ code }}" {% if code == 'USD' %}selected{% endif %}>{{ code }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+			</div>
+			<div class="column">
+				<div class="to">
+                        <p>To</p>
+                        <div class="select-input">
+                            <img src="https://flagcdn.com/48x36/gb.png" id="to-flag">
+                            <select name="to_currency" id="to-currency">
+                                {% for code, country in currency_list.items() %}
+                                    <option value="{{ code }}" {% if code == 'GBP' %}selected{% endif %}>{{ code }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+			</div>
+        </div>
+		<div class="row">
+            <div class="column">
+                <div class="result">{{ result }}</div>
+            </div>
+		</div>
+		<div class="row">
+            <div class="column"></div>
+			    <button>Exchange Rate</button>
+            </div>
+		</div>
+	</form>
+</div>
+
+</body>
