@@ -23,6 +23,6 @@ pip install -r requirements.txt
 
 ### Run
 ```sh
- python app.py
+python app.py
 
 ```
