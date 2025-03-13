@@ -10,7 +10,7 @@ A simple currency converter web application built using **Flask (Python)** for b
 ## 🛠 Installation & Setup  
 ### Clone the repository  
 ```sh
-git clone https://github.com/TerrainXD/OS-Project.git
+git clone https://github.com/TerrainXD/Currency-Converter.git
 
 cd currency
 
